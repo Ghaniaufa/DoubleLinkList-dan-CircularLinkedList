@@ -42,6 +42,12 @@ namespace double_linked_list
                     Console.WriteLine("\nDuplicate number not allowed");
                     return;
                 }
+                newNode.next = START; 
+                if (START != null)
+                    START.prev = newNode;
+                newNode.next = null;
+                START = newNode;
+                return;
             }
         }
     }
