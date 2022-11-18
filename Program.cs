@@ -109,6 +109,16 @@ namespace double_linked_list
                     START.prev = null;
                 return true;
             }
+
+            //*if the to be deleted is in between the list then the following lines ofix executed. */
+            previous.next = current.next;
+            current.next.prev = previous;
+            return true;
+        }
+        public bool asceding()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
         }
     }
 }
