@@ -42,16 +42,26 @@ namespace double_linked_list
                     Console.WriteLine("\nDuplicate number not allowed");
                     return;
                 }
-                newNode.next = START; 
+                newNode.next = START;
                 if (START != null)
                     START.prev = newNode;
                 newNode.next = null;
                 START = newNode;
                 return;
             }
-            /*On the execution of the above for loop, prev and
-         * current will point to those nodes
-         * between which the new node is to be inserted*/
+            /*if the node is to be inserted at beetwen to Node*/
+            Node previous, current;
+            for (ccurrent = previous = START;
+                current != null && nim >= current.noMhs;
+                previous = current, current = current.next)
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nDuplicate roll numbers not allowed")
+                }
+            }
+         //* current will point to those nodes
+         //*between which the new node is to be inserted*/
             newNode.next = current;
             newNode.prev = previous;
 
@@ -62,6 +72,9 @@ namespace double_linked_list
                 previous.next = newNode;
                 return;
             }
+            current.prev = newNode;
+            previous.next = newNode;
+
         }
     }
 }
