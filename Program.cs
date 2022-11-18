@@ -51,13 +51,13 @@ namespace double_linked_list
             }
             /*if the node is to be inserted at beetwen to Node*/
             Node previous, current;
-            for (ccurrent = previous = START;
+            for (current = previous = START;
                 current != null && nim >= current.noMhs;
                 previous = current, current = current.next)
             {
                 if (nim == current.noMhs)
                 {
-                    Console.WriteLine("\nDuplicate roll numbers not allowed")
+                    Console.WriteLine("\nDuplicate roll numbers not allowed");
                 }
             }
          //* current will point to those nodes
@@ -75,6 +75,15 @@ namespace double_linked_list
             current.prev = newNode;
             previous.next = newNode;
 
+        }
+
+        public bool Search(int rollNo, ref Node previous, ref Node current)
+        {
+            previous = current = START;
+            while (current != null && rollNo != current.noMhs)
+            {
+
+            }
         }
     }
 }
