@@ -8,6 +8,7 @@ namespace double_linked_list
          * It consists of the information part and links to
          * * Its succeding and preceeding
          * * In terms of next and previous*/
-        
+        public int noMhs;
+        public string name;
     }
 }
