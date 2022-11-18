@@ -60,8 +60,8 @@ namespace double_linked_list
                     Console.WriteLine("\nDuplicate roll numbers not allowed");
                 }
             }
-         //* current will point to those nodes
-         //*between which the new node is to be inserted*/
+            //* current will point to those nodes
+            //*between which the new node is to be inserted*/
             newNode.next = current;
             newNode.prev = previous;
 
@@ -87,18 +87,27 @@ namespace double_linked_list
             }
             return (current != null);
 
-            public bool dellNode(int rollNo)
+
+        }
+        public bool dellNode(int rollNo)
+        {
+            Node previous, current;
+            previous = current = null;
+            if (Search(rollNo, ref previous, ref current) == false)
+                return false;
+            // the begining of data
+            if (current.next == null)
             {
-                Node previous, current;
-                previous = current = null;
-                if (Search(rollNo, ref previous, ref current) == false)
-                    return false;
-                // the begining of data
-                if (current.next == null)
-                {
-                    previous.next = null;
-                    return true;
-                }
+                previous.next = null;
+                return true;
+            }
+            //Node between two nodes in the list
+            if (current == START )
+            {
+                START = START.next;
+                if (START != null)
+                    START.prev = null;
+                return true;
             }
         }
     }
