@@ -82,8 +82,10 @@ namespace double_linked_list
             previous = current = START;
             while (current != null && rollNo != current.noMhs)
             {
-
+                previous = current;
+                current = current.next;
             }
+            return (current != null);
         }
     }
 }
