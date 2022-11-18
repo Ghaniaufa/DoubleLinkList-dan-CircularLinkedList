@@ -197,7 +197,7 @@ namespace double_linked_list
                                 if (obj.dellNode(rollNo) == false)
                                     Console.WriteLine("Record not found");
                                 else
-                                Console.WriteLine("Record with roll number " + rollNo + "deleted \n")
+                                    Console.WriteLine("Record with roll number " + rollNo + "deleted \n");
                             }
                             break;
                         case '3':
@@ -208,6 +208,27 @@ namespace double_linked_list
                         case '4':
                             {
                                 obj.descending();
+                            }
+                            break;
+                        case '5':
+                            {
+                                if(obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Node prev, curr;
+                                prev = curr = null;
+                                Console.Write("\nEnter the roll number of the studnet whose record you want to search: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref prev, ref curr) == false)
+                                    Console.Write("\nRecord not found");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord found");
+                                    Console.WriteLine("\nRoll number: " + curr.noMhs);
+                                    Console.WriteLine("\nName : " + curr.name);
+                                }
                             }
                             break;
                     }
