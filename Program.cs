@@ -202,7 +202,12 @@ namespace double_linked_list
                             break;
                         case '3':
                             {
-                                obj.asceding()
+                                obj.asceding();
+                            }
+                            break;
+                        case '4':
+                            {
+                                obj.descending();
                             }
                             break;
                     }
