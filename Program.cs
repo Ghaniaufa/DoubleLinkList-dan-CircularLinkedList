@@ -49,6 +49,19 @@ namespace double_linked_list
                 START = newNode;
                 return;
             }
+            /*On the execution of the above for loop, prev and
+         * current will point to those nodes
+         * between which the new node is to be inserted*/
+            newNode.next = current;
+            newNode.prev = previous;
+
+            //if the node is to be inserted at the end of the list
+            if (current == null)
+            {
+                newNode.next = null;
+                previous.next = newNode;
+                return;
+            }
         }
     }
 }
